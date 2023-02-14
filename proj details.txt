@@ -1,0 +1,17 @@
+EquivGrades and Gwa Calculator
+
+Features
+
+-Students can log in and view their current grades and gwa
+-Admins can log in and edit students' grades
+-equivgrades and gwa is auto computed
+-register as a student (create new acc), be able to choose which year to enroll to
+
+Given
+-at least 1 prof acc
+-at least 1 student acc with x number of subjects
+-subjects for bsit 1st year to 4th year
+
+Extra features / low prio
+-database or file handling
+-more courses maybe; other than bsit
