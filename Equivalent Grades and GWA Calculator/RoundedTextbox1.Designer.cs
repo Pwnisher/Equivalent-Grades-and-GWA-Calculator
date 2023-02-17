@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Equivalent_Grades_and_GWA_Calculator.Properties {
+namespace Equivalent_Grades_and_GWA_Calculator {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace Equivalent_Grades_and_GWA_Calculator.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    internal class RoundedTextbox {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        internal RoundedTextbox() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Equivalent_Grades_and_GWA_Calculator.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Equivalent_Grades_and_GWA_Calculator.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Equivalent_Grades_and_GWA_Calculator.RoundedTextbox", typeof(RoundedTextbox).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,26 +57,6 @@ namespace Equivalent_Grades_and_GWA_Calculator.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap left_BGv2 {
-            get {
-                object obj = ResourceManager.GetObject("left BGv2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap right_BGv3 {
-            get {
-                object obj = ResourceManager.GetObject("right BGv3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
