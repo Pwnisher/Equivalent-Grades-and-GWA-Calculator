@@ -10,13 +10,21 @@ using System.Windows.Forms;
 
 namespace Equivalent_Grades_and_GWA_Calculator
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
         int mov, movX, movY;
-        public Form1()
+        public Login()
         {
             InitializeComponent();
             this.Location = Screen.AllScreens[0].WorkingArea.Location;
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            label1.Parent = pictureBox2;
+            label2.Parent = pictureBox2;
+            label1.BackColor = Color.Transparent;
+            label2.BackColor = Color.Transparent;
         }
 
         //para ma-drag ung titlebar nang walang border ung form
@@ -26,8 +34,8 @@ namespace Equivalent_Grades_and_GWA_Calculator
             {
                 this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
             }
-        }
-        
+        }     
+
         private void titleBar_MouseUp(object sender, MouseEventArgs e)
         {
             mov = 0;
@@ -41,9 +49,17 @@ namespace Equivalent_Grades_and_GWA_Calculator
         }
         //end titlebar
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            Form main = new Main();
+            this.Hide();
+            main.ShowDialog();
+            this.Show();
         }
     }
 }

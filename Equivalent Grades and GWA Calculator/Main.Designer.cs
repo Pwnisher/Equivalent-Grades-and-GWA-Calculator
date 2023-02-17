@@ -1,6 +1,6 @@
 ﻿namespace Equivalent_Grades_and_GWA_Calculator
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -64,11 +64,12 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(284, 282);
+            this.button1.Location = new System.Drawing.Point(261, 188);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 1;
-            this.button1.Text = "test";
+            this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // Form1

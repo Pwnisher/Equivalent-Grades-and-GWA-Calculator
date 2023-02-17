@@ -16,7 +16,7 @@ namespace Equivalent_Grades_and_GWA_Calculator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Login());
         }
     }
 }
