@@ -181,6 +181,7 @@ namespace Equivalent_Grades_and_GWA_Calculator
                 table.GetControlFromPosition(3, temp).Text = s;
 
                 saveChange(tb_grade.Text, temp);
+                computeGWA();
             }
         }
 
@@ -218,6 +219,7 @@ namespace Equivalent_Grades_and_GWA_Calculator
                 table.GetControlFromPosition(2, i + 1).Text = eq;
                 table.GetControlFromPosition(3, i + 1).Text = s;
             }
+            computeGWA();
         }
 
         // selecting a student        
@@ -345,6 +347,28 @@ namespace Equivalent_Grades_and_GWA_Calculator
                 s = "Invalid";
             }
 
+        }
+        public void computeGWA()
+        {
+            double total = 0, result, n = 0;
+  
+            // iterate through table at x value of 1 which is the grades column
+            for(int i = 1; i < 10; i++)
+            {
+                // dont include blank and special case grades
+                if(table.GetControlFromPosition(2, i).Text != "" &&
+                table.GetControlFromPosition(2, i).Text != "INC" &&
+                table.GetControlFromPosition(2, i).Text != "W" &&
+                table.GetControlFromPosition(2, i).Text != "Invalid")
+                {
+                    total += Convert.ToDouble(table.GetControlFromPosition(2, i).Text);
+                    n++;
+                }
+            }
+
+            result = total / n;
+            result = Math.Truncate(result * 100) / 100; // formats to hundredths place
+            lbl_gwa.Text = result.ToString();
         }
 
         // ---------------------------- data for demo accounts ---------------------------- //
