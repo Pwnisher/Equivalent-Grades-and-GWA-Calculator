@@ -34,11 +34,13 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblOr = new System.Windows.Forms.Label();
             this.lblLoginAs = new System.Windows.Forms.Label();
-            this.btnAdmin = new CustomControls.RoundedButton.RoundedButton();
+            this.tbPassword = new CustomControls.RJControls.RoundedTextbox();
+            this.tbUsername = new CustomControls.RJControls.RoundedTextbox();
             this.btnStudent = new CustomControls.RoundedButton.RoundedButton();
+            this.btnAdmin = new CustomControls.RoundedButton.RoundedButton();
             this.btnLogin = new CustomControls.RoundedButton.RoundedButton();
-            this.cbUsername = new CustomControls.RJControls.RoundedComboBox();
             this.btnExit = new CustomControls.RoundedButton.RoundedButton();
+            this.cbUsername = new CustomControls.RJControls.RoundedComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -67,6 +69,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::Equivalent_Grades_and_GWA_Calculator.Properties.Resources.right_BGv3;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
@@ -77,10 +80,12 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.tbPassword);
+            this.panel2.Controls.Add(this.tbUsername);
+            this.panel2.Controls.Add(this.cbUsername);
             this.panel2.Controls.Add(this.btnStudent);
             this.panel2.Controls.Add(this.btnAdmin);
             this.panel2.Controls.Add(this.btnLogin);
-            this.panel2.Controls.Add(this.cbUsername);
             this.panel2.Controls.Add(this.lblOr);
             this.panel2.Controls.Add(this.lblLoginAs);
             this.panel2.Controls.Add(this.btnExit);
@@ -112,26 +117,51 @@
             this.lblLoginAs.TabIndex = 5;
             this.lblLoginAs.Text = "Login As:";
             // 
-            // btnAdmin
+            // tbPassword
             // 
-            this.btnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnAdmin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnAdmin.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnAdmin.BorderRadius = 10;
-            this.btnAdmin.BorderSize = 0;
-            this.btnAdmin.FlatAppearance.BorderSize = 0;
-            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmin.Font = new System.Drawing.Font("Poppins", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdmin.ForeColor = System.Drawing.Color.White;
-            this.btnAdmin.Location = new System.Drawing.Point(50, 416);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.btnAdmin.Size = new System.Drawing.Size(260, 40);
-            this.btnAdmin.TabIndex = 4;
-            this.btnAdmin.Text = "Admin";
-            this.btnAdmin.TextColor = System.Drawing.Color.White;
-            this.btnAdmin.UseVisualStyleBackColor = false;
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            this.tbPassword.BackColor = System.Drawing.Color.White;
+            this.tbPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
+            this.tbPassword.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.tbPassword.BorderRadius = 0;
+            this.tbPassword.BorderSize = 2;
+            this.tbPassword.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Italic);
+            this.tbPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbPassword.Location = new System.Drawing.Point(50, 373);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.tbPassword.Multiline = false;
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Padding = new System.Windows.Forms.Padding(10, 9, 10, 7);
+            this.tbPassword.PasswordChar = false;
+            this.tbPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tbPassword.PlaceholderText = "Password";
+            this.tbPassword.Size = new System.Drawing.Size(260, 42);
+            this.tbPassword.TabIndex = 9;
+            this.tbPassword.Texts = "";
+            this.tbPassword.UnderlinedStyle = false;
+            this.tbPassword.Visible = false;
+            // 
+            // tbUsername
+            // 
+            this.tbUsername.BackColor = System.Drawing.Color.White;
+            this.tbUsername.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
+            this.tbUsername.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.tbUsername.BorderRadius = 0;
+            this.tbUsername.BorderSize = 2;
+            this.tbUsername.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Italic);
+            this.tbUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbUsername.Location = new System.Drawing.Point(50, 323);
+            this.tbUsername.Margin = new System.Windows.Forms.Padding(4);
+            this.tbUsername.Multiline = false;
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Padding = new System.Windows.Forms.Padding(10, 9, 10, 7);
+            this.tbUsername.PasswordChar = false;
+            this.tbUsername.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tbUsername.PlaceholderText = "Username";
+            this.tbUsername.Size = new System.Drawing.Size(260, 42);
+            this.tbUsername.TabIndex = 8;
+            this.tbUsername.Texts = "";
+            this.tbUsername.UnderlinedStyle = false;
+            this.tbUsername.Visible = false;
             // 
             // btnStudent
             // 
@@ -154,6 +184,27 @@
             this.btnStudent.UseVisualStyleBackColor = false;
             this.btnStudent.Click += new System.EventHandler(this.btnStudent_Click);
             // 
+            // btnAdmin
+            // 
+            this.btnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnAdmin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnAdmin.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAdmin.BorderRadius = 10;
+            this.btnAdmin.BorderSize = 0;
+            this.btnAdmin.FlatAppearance.BorderSize = 0;
+            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmin.Font = new System.Drawing.Font("Poppins", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmin.ForeColor = System.Drawing.Color.White;
+            this.btnAdmin.Location = new System.Drawing.Point(50, 416);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            this.btnAdmin.Size = new System.Drawing.Size(260, 40);
+            this.btnAdmin.TabIndex = 4;
+            this.btnAdmin.Text = "Admin";
+            this.btnAdmin.TextColor = System.Drawing.Color.White;
+            this.btnAdmin.UseVisualStyleBackColor = false;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
@@ -165,7 +216,7 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Poppins", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(50, 382);
+            this.btnLogin.Location = new System.Drawing.Point(50, 425);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
             this.btnLogin.Size = new System.Drawing.Size(260, 40);
@@ -174,34 +225,7 @@
             this.btnLogin.TextColor = System.Drawing.Color.White;
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Visible = false;
-            this.btnLogin.Click += new System.EventHandler(this.roundedButton1_Click);
-            // 
-            // cbUsername
-            // 
-            this.cbUsername.BackColor = System.Drawing.Color.White;
-            this.cbUsername.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
-            this.cbUsername.BorderSize = 2;
-            this.cbUsername.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbUsername.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.cbUsername.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.cbUsername.Items.AddRange(new object[] {
-            "Arroyo, Euclide Andrei",
-            "Montemayor, Carl John",
-            "Astillo, Clouie",
-            "Sensico, Ashley",
-            "Silva, Neon Genesis"});
-            this.cbUsername.ListBackColor = System.Drawing.Color.White;
-            this.cbUsername.ListTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.cbUsername.Location = new System.Drawing.Point(50, 324);
-            this.cbUsername.MinimumSize = new System.Drawing.Size(200, 30);
-            this.cbUsername.Name = "cbUsername";
-            this.cbUsername.Padding = new System.Windows.Forms.Padding(2);
-            this.cbUsername.Size = new System.Drawing.Size(260, 40);
-            this.cbUsername.TabIndex = 7;
-            this.cbUsername.Texts = "-SELECT-";
-            this.cbUsername.Visible = false;
-            this.cbUsername.OnSelectedIndexChanged += new System.EventHandler(this.roundedComboBox1_OnSelectedIndexChanged);
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnExit
             // 
@@ -223,6 +247,33 @@
             this.btnExit.TextColor = System.Drawing.Color.White;
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // cbUsername
+            // 
+            this.cbUsername.BackColor = System.Drawing.Color.White;
+            this.cbUsername.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
+            this.cbUsername.BorderSize = 2;
+            this.cbUsername.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbUsername.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.cbUsername.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.cbUsername.Items.AddRange(new object[] {
+            "Arroyo, Euclide Andrei",
+            "Montemayor, Carl John",
+            "Astillo, Clouie",
+            "Sensico, Ashley",
+            "Silva, Neon Genesis"});
+            this.cbUsername.ListBackColor = System.Drawing.Color.White;
+            this.cbUsername.ListTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.cbUsername.Location = new System.Drawing.Point(50, 498);
+            this.cbUsername.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cbUsername.Name = "cbUsername";
+            this.cbUsername.Padding = new System.Windows.Forms.Padding(2);
+            this.cbUsername.Size = new System.Drawing.Size(260, 40);
+            this.cbUsername.TabIndex = 7;
+            this.cbUsername.Texts = "-SELECT-";
+            this.cbUsername.Visible = false;
+            this.cbUsername.OnSelectedIndexChanged += new System.EventHandler(this.roundedComboBox1_OnSelectedIndexChanged);
             // 
             // Login
             // 
@@ -259,5 +310,7 @@
         private System.Windows.Forms.Label lblOr;
         private CustomControls.RoundedButton.RoundedButton btnLogin;
         private CustomControls.RJControls.RoundedComboBox cbUsername;
+        private CustomControls.RJControls.RoundedTextbox tbPassword;
+        private CustomControls.RJControls.RoundedTextbox tbUsername;
     }
 }

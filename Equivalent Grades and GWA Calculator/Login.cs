@@ -68,6 +68,8 @@ namespace Equivalent_Grades_and_GWA_Calculator
             lblOr.Visible = false;
             btnAdmin.Visible = false;
             btnStudent.Visible = false;
+            tbPassword.Visible = true;
+            tbUsername.Visible = true;
         }        
 
         private void roundedComboBox1_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -108,8 +110,8 @@ namespace Equivalent_Grades_and_GWA_Calculator
             }           
         }
 
-        private void roundedButton1_Click(object sender, EventArgs e)
-        {
+        private void btnLogin_Click(object sender, EventArgs e)
+        {            
             Form main = new Main(loginMode, selectedStudent);
             this.Hide();
             main.ShowDialog();
@@ -135,6 +137,8 @@ namespace Equivalent_Grades_and_GWA_Calculator
             btnAdmin.Visible = true;
             btnStudent.Visible = true;
             cbUsername.Texts = "-SELECT-";
+            tbPassword.Visible = false;
+            tbUsername.Visible = false;
         }
 
         //method for checking and generating default values if file doesnt exist
