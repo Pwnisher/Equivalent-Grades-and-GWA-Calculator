@@ -31,11 +31,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnStudent = new CustomControls.RoundedButton.RoundedButton();
-            this.btnAdmin = new CustomControls.RoundedButton.RoundedButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblOr = new System.Windows.Forms.Label();
+            this.lblLoginAs = new System.Windows.Forms.Label();
+            this.btnAdmin = new CustomControls.RoundedButton.RoundedButton();
+            this.btnStudent = new CustomControls.RoundedButton.RoundedButton();
+            this.btnLogin = new CustomControls.RoundedButton.RoundedButton();
+            this.cbUsername = new CustomControls.RJControls.RoundedComboBox();
             this.btnExit = new CustomControls.RoundedButton.RoundedButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -73,26 +75,42 @@
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
-            // btnStudent
+            // panel2
             // 
-            this.btnStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.btnStudent.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.btnStudent.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnStudent.BorderRadius = 10;
-            this.btnStudent.BorderSize = 0;
-            this.btnStudent.FlatAppearance.BorderSize = 0;
-            this.btnStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStudent.Font = new System.Drawing.Font("Poppins", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStudent.ForeColor = System.Drawing.Color.White;
-            this.btnStudent.Location = new System.Drawing.Point(450, 335);
-            this.btnStudent.Name = "btnStudent";
-            this.btnStudent.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.btnStudent.Size = new System.Drawing.Size(260, 40);
-            this.btnStudent.TabIndex = 3;
-            this.btnStudent.Text = "Student";
-            this.btnStudent.TextColor = System.Drawing.Color.White;
-            this.btnStudent.UseVisualStyleBackColor = false;
-            this.btnStudent.Click += new System.EventHandler(this.btnStudent_Click);
+            this.panel2.Controls.Add(this.btnStudent);
+            this.panel2.Controls.Add(this.btnAdmin);
+            this.panel2.Controls.Add(this.btnLogin);
+            this.panel2.Controls.Add(this.cbUsername);
+            this.panel2.Controls.Add(this.lblOr);
+            this.panel2.Controls.Add(this.lblLoginAs);
+            this.panel2.Controls.Add(this.btnExit);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Location = new System.Drawing.Point(400, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(351, 550);
+            this.panel2.TabIndex = 5;
+            // 
+            // lblOr
+            // 
+            this.lblOr.AutoSize = true;
+            this.lblOr.BackColor = System.Drawing.Color.Transparent;
+            this.lblOr.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOr.Location = new System.Drawing.Point(162, 379);
+            this.lblOr.Name = "lblOr";
+            this.lblOr.Size = new System.Drawing.Size(37, 34);
+            this.lblOr.TabIndex = 6;
+            this.lblOr.Text = "Or";
+            // 
+            // lblLoginAs
+            // 
+            this.lblLoginAs.AutoSize = true;
+            this.lblLoginAs.BackColor = System.Drawing.Color.Transparent;
+            this.lblLoginAs.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoginAs.Location = new System.Drawing.Point(131, 298);
+            this.lblLoginAs.Name = "lblLoginAs";
+            this.lblLoginAs.Size = new System.Drawing.Size(98, 34);
+            this.lblLoginAs.TabIndex = 5;
+            this.lblLoginAs.Text = "Login As:";
             // 
             // btnAdmin
             // 
@@ -105,7 +123,7 @@
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdmin.Font = new System.Drawing.Font("Poppins", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmin.ForeColor = System.Drawing.Color.White;
-            this.btnAdmin.Location = new System.Drawing.Point(450, 416);
+            this.btnAdmin.Location = new System.Drawing.Point(50, 416);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
             this.btnAdmin.Size = new System.Drawing.Size(260, 40);
@@ -115,38 +133,75 @@
             this.btnAdmin.UseVisualStyleBackColor = false;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
-            // panel2
+            // btnStudent
             // 
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.btnExit);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(400, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(351, 550);
-            this.panel2.TabIndex = 5;
+            this.btnStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
+            this.btnStudent.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
+            this.btnStudent.BorderColor = System.Drawing.Color.White;
+            this.btnStudent.BorderRadius = 10;
+            this.btnStudent.BorderSize = 0;
+            this.btnStudent.FlatAppearance.BorderSize = 0;
+            this.btnStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStudent.Font = new System.Drawing.Font("Poppins", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStudent.ForeColor = System.Drawing.Color.White;
+            this.btnStudent.Location = new System.Drawing.Point(50, 336);
+            this.btnStudent.Name = "btnStudent";
+            this.btnStudent.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            this.btnStudent.Size = new System.Drawing.Size(260, 40);
+            this.btnStudent.TabIndex = 3;
+            this.btnStudent.Text = "Student";
+            this.btnStudent.TextColor = System.Drawing.Color.White;
+            this.btnStudent.UseVisualStyleBackColor = false;
+            this.btnStudent.Click += new System.EventHandler(this.btnStudent_Click);
             // 
-            // label2
+            // btnLogin
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(162, 379);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 34);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Or";
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
+            this.btnLogin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
+            this.btnLogin.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnLogin.BorderRadius = 10;
+            this.btnLogin.BorderSize = 0;
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Poppins", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(50, 382);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            this.btnLogin.Size = new System.Drawing.Size(260, 40);
+            this.btnLogin.TabIndex = 6;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.TextColor = System.Drawing.Color.White;
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Visible = false;
+            this.btnLogin.Click += new System.EventHandler(this.roundedButton1_Click);
             // 
-            // label1
+            // cbUsername
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(131, 298);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 34);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Login As:";
+            this.cbUsername.BackColor = System.Drawing.Color.White;
+            this.cbUsername.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
+            this.cbUsername.BorderSize = 2;
+            this.cbUsername.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbUsername.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.cbUsername.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.cbUsername.Items.AddRange(new object[] {
+            "Arroyo, Euclide Andrei",
+            "Montemayor, Carl John",
+            "Astillo, Clouie",
+            "Sensico, Ashley",
+            "Silva, Neon Genesis"});
+            this.cbUsername.ListBackColor = System.Drawing.Color.White;
+            this.cbUsername.ListTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.cbUsername.Location = new System.Drawing.Point(50, 324);
+            this.cbUsername.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cbUsername.Name = "cbUsername";
+            this.cbUsername.Padding = new System.Windows.Forms.Padding(2);
+            this.cbUsername.Size = new System.Drawing.Size(260, 40);
+            this.cbUsername.TabIndex = 7;
+            this.cbUsername.Texts = "-SELECT-";
+            this.cbUsername.Visible = false;
+            this.cbUsername.OnSelectedIndexChanged += new System.EventHandler(this.roundedComboBox1_OnSelectedIndexChanged);
             // 
             // btnExit
             // 
@@ -174,8 +229,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 550);
-            this.Controls.Add(this.btnAdmin);
-            this.Controls.Add(this.btnStudent);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
@@ -202,7 +255,9 @@
         private CustomControls.RoundedButton.RoundedButton btnAdmin;
         private System.Windows.Forms.Panel panel2;
         private CustomControls.RoundedButton.RoundedButton btnExit;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblLoginAs;
+        private System.Windows.Forms.Label lblOr;
+        private CustomControls.RoundedButton.RoundedButton btnLogin;
+        private CustomControls.RJControls.RoundedComboBox cbUsername;
     }
 }

@@ -13,7 +13,8 @@ namespace Equivalent_Grades_and_GWA_Calculator
 {
     public partial class Login : Form
     {
-        int mov, movX, movY;
+        int mov, movX, movY, selectedStudent;
+        string loginMode;
         public Login()
         {
             InitializeComponent();
@@ -22,10 +23,10 @@ namespace Equivalent_Grades_and_GWA_Calculator
 
         private void Login_Load(object sender, EventArgs e)
         {
-            label1.Parent = pictureBox2;
-            label2.Parent = pictureBox2;
-            label1.BackColor = Color.Transparent;
-            label2.BackColor = Color.Transparent;
+            lblLoginAs.Parent = pictureBox2;
+            lblOr.Parent = pictureBox2;
+            lblLoginAs.BackColor = Color.Transparent;
+            lblOr.BackColor = Color.Transparent;
 
             //checks and generates default values if file doesnt exist
             GenerateDefaultValues();            
@@ -60,20 +61,80 @@ namespace Equivalent_Grades_and_GWA_Calculator
 
         private void btnStudent_Click(object sender, EventArgs e)
         {
-            string loginMode = "student";
-            Form main = new Main(loginMode);
-            this.Hide();
-            main.ShowDialog();
-            this.Show();
+            loginMode = "Student";
+            cbUsername.Visible = true;
+            btnLogin.Visible = true;
+            lblLoginAs.Visible = false;
+            lblOr.Visible = false;
+            btnAdmin.Visible = false;
+            btnStudent.Visible = false;
+        }        
+
+        private void roundedComboBox1_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            string studentName = cbUsername.SelectedItem.ToString();
+
+            switch (studentName)
+            {
+                case "Arroyo, Euclide Andrei":
+                    {
+                        selectedStudent = 1;
+                    }
+                    break;
+
+                case "Montemayor, Carl John":
+                    {
+                        selectedStudent = 2;
+                    }
+                    break;
+
+                case "Astillo, Clouie":
+                    {
+                        selectedStudent = 3;
+                    }
+                    break;
+
+                case "Sensico, Ashley":
+                    {
+                        selectedStudent = 4;
+                    }
+                    break;
+
+                case "Silva, Neon Genesis":
+                    {
+                        selectedStudent = 5;
+                    }
+                    break;
+            }           
         }
 
-        private void btnAdmin_Click(object sender, EventArgs e)
+        private void roundedButton1_Click(object sender, EventArgs e)
         {
-            string loginMode = "admin";
-            Form main = new Main(loginMode);
+            Form main = new Main(loginMode, selectedStudent);
             this.Hide();
             main.ShowDialog();
             this.Show();
+            reset();
+        }
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            loginMode = "Admin";
+            Form main = new Main(loginMode,0);
+            this.Hide();
+            main.ShowDialog();
+            this.Show();
+            reset();
+        }
+
+        private void reset()
+        {
+            cbUsername.Visible = false;
+            btnLogin.Visible = false;
+            lblLoginAs.Visible = true;
+            lblOr.Visible = true;
+            btnAdmin.Visible = true;
+            btnStudent.Visible = true;
+            cbUsername.Texts = "-SELECT-";
         }
 
         //method for checking and generating default values if file doesnt exist

@@ -14,13 +14,14 @@ namespace Equivalent_Grades_and_GWA_Calculator
 {
     public partial class Main : Form
     {
-        int mov, movX, movY;
+        int mov, movX, movY, selectedStudent;
         string loginMode;
-        public Main(string logMode)
+        public Main(string logMode, int selStudent)
         {            
             InitializeComponent();
             this.Location = Screen.AllScreens[0].WorkingArea.Location;
             loginMode = logMode;
+            selectedStudent = selStudent;
         }
 
         string[] student1, student2, student3, student4, student5;
@@ -33,10 +34,8 @@ namespace Equivalent_Grades_and_GWA_Calculator
             student4 = File.ReadAllLines("./student4.txt");
             student5 = File.ReadAllLines("./student5.txt");
 
-            //sets loginMode if Student or Admin
-            lblUsername.Text = loginMode;
-
-            if (loginMode == "student")
+            //sets loginMode if Student or Admin       
+            if (loginMode == "Student")
             {
                 cb_student.Visible = false;
                 lblSelectSubject.Visible = false;
@@ -45,14 +44,41 @@ namespace Equivalent_Grades_and_GWA_Calculator
                 btnSaveChanges.Visible = false;
                 tb_grade.Visible = false;
             }
-            else if (loginMode == "admin")
+
+            else if (loginMode == "Admin")
             {
                 cb_student.Visible = true;
                 lblSelectSubject.Visible = true;
                 cb_subject.Visible = true;
                 btnChangeGrade.Visible = true;
                 btnSaveChanges.Visible = true;
-                tb_grade.Visible = false;
+                tb_grade.Visible = true;
+                lblUsername.Text = loginMode + "!";
+            }
+
+            //updates table from the combobox from login
+            switch (selectedStudent)
+            {
+                case 1:
+                    updateTable(student1, bsit1_1_1);
+                    lblUsername.Text = "Arroyo, Euclide Andrei!";
+                    break;
+                case 2:
+                    updateTable(student2, bsit1_1_2);
+                    lblUsername.Text = "Montemayor, Carl John!"; 
+                    break;
+                case 3:
+                    updateTable(student3, bsit2_1_1);
+                    lblUsername.Text = "Astillo, Clouie!";
+                    break;
+                case 4:
+                    updateTable(student4, bsit2_1_2);
+                    lblUsername.Text = "Sensico, Ashley!";
+                    break;
+                case 5:
+                    updateTable(student5, bsit3_1_1);
+                    lblUsername.Text = "Silva, Neon Genesis!";
+                    break;
             }
         }
 
@@ -194,8 +220,7 @@ namespace Equivalent_Grades_and_GWA_Calculator
             }
         }
 
-        // selecting a student
-        int selectedStudent;
+        // selecting a student        
         private void cb_student_SelectedIndexChanged(object sender, EventArgs e)
         {
             string studentName = cb_student.GetItemText(cb_student.SelectedItem);
@@ -378,10 +403,13 @@ namespace Equivalent_Grades_and_GWA_Calculator
         //string[] student5 = { "88", "88", "88", "70", "98", "95", "91" };
         // ---------------------------- data for demo accounts ---------------------------- //
 
+        //logout button
         private void button2_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
         }
+
+        //writes grade to file
         private void button3_Click(object sender, EventArgs e)
         {
             switch (selectedStudent)
