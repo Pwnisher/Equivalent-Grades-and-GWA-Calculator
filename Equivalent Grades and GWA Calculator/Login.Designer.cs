@@ -92,6 +92,7 @@
             this.btnStudent.Text = "Student";
             this.btnStudent.TextColor = System.Drawing.Color.White;
             this.btnStudent.UseVisualStyleBackColor = false;
+            this.btnStudent.Click += new System.EventHandler(this.btnStudent_Click);
             // 
             // btnAdmin
             // 
@@ -149,22 +150,22 @@
             // 
             // btnExit
             // 
-            this.btnExit.BackColor = System.Drawing.Color.White;
-            this.btnExit.BackgroundColor = System.Drawing.Color.White;
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(14)))), ((int)(((byte)(9)))));
+            this.btnExit.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(14)))), ((int)(((byte)(9)))));
             this.btnExit.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnExit.BorderRadius = 15;
             this.btnExit.BorderSize = 0;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Poppins Black", 13F, System.Drawing.FontStyle.Bold);
-            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Location = new System.Drawing.Point(314, 12);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
             this.btnExit.Size = new System.Drawing.Size(55, 33);
             this.btnExit.TabIndex = 4;
             this.btnExit.Text = "X";
-            this.btnExit.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnExit.TextColor = System.Drawing.Color.White;
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 

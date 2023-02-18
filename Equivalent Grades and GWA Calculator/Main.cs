@@ -3,20 +3,57 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Equivalent_Grades_and_GWA_Calculator
 {
     public partial class Main : Form
     {
         int mov, movX, movY;
-        public Main()
-        {
+        string loginMode;
+        public Main(string logMode)
+        {            
             InitializeComponent();
             this.Location = Screen.AllScreens[0].WorkingArea.Location;
+            loginMode = logMode;
+        }
+
+        string[] student1, student2, student3, student4, student5;
+        private void Main_Load(object sender, EventArgs e) 
+        {
+            //loads data from file
+            student1 = File.ReadAllLines("./student1.txt");
+            student2 = File.ReadAllLines("./student2.txt");
+            student3 = File.ReadAllLines("./student3.txt");
+            student4 = File.ReadAllLines("./student4.txt");
+            student5 = File.ReadAllLines("./student5.txt");
+
+            //sets loginMode if Student or Admin
+            lblUsername.Text = loginMode;
+
+            if (loginMode == "student")
+            {
+                cb_student.Visible = false;
+                lblSelectSubject.Visible = false;
+                cb_subject.Visible = false;
+                btnChangeGrade.Visible = false;
+                btnSaveChanges.Visible = false;
+                tb_grade.Visible = false;
+            }
+            else if (loginMode == "admin")
+            {
+                cb_student.Visible = true;
+                lblSelectSubject.Visible = true;
+                cb_subject.Visible = true;
+                btnChangeGrade.Visible = true;
+                btnSaveChanges.Visible = true;
+                tb_grade.Visible = false;
+            }
         }
 
         //para ma-drag ung titlebar nang walang border ung form
@@ -254,7 +291,7 @@ namespace Equivalent_Grades_and_GWA_Calculator
             }
             else if (g == 75)
             {
-                eq = "2.0";
+                eq = "3.0"; // this was 2.0 before
                 s = "Passing";
             }
             else if (g >= 65 && g <= 74)
@@ -334,13 +371,66 @@ namespace Equivalent_Grades_and_GWA_Calculator
                                 "IT Elective 1"
         };
 
-        string[] student1 = { "89", "78", "87", "71", "67", "83", "93", "99" };
-        string[] student2 = { "90", "99", "74", "98", "78", "95", "62" };
-        string[] student3 = { "66", "96", "81", "72", "64", "85", "89", "90" };
-        string[] student4 = { "91", "92", "93", "89", "88", "87", "86", "94" };
-        string[] student5 = { "88", "88", "88", "70", "98", "95", "91" };
+        //string[] student1 = { "89", "78", "87", "71", "67", "83", "93", "99" };
+        //string[] student2 = { "90", "99", "74", "98", "78", "95", "62" };  
+        //string[] student3 = { "66", "96", "81", "72", "64", "85", "89", "90" };
+        //string[] student4 = { "91", "92", "93", "89", "88", "87", "86", "94" };
+        //string[] student5 = { "88", "88", "88", "70", "98", "95", "91" };
         // ---------------------------- data for demo accounts ---------------------------- //
-    
-        
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            switch (selectedStudent)
+            {
+                case 1:
+                    {
+                        TextWriter txt = new StreamWriter("./student1.txt");
+                        string student = student1[0] + "\n" + student1[1] + "\n" + student1[2] + "\n" + student1[3] + "\n" + student1[4] + "\n" + student1[5] + "\n" + student1[6] + "\n" + student1[7];
+                        txt.Write(student);
+                        txt.Close();
+                        break;
+                    }
+
+                case 2:
+                    {
+                        TextWriter txt = new StreamWriter("./student2.txt");
+                        string student = student2[0] + "\n" + student2[1] + "\n" + student2[2] + "\n" + student2[3] + "\n" + student2[4] + "\n" + student2[5] + "\n" + student2[6];
+                        txt.Write(student);
+                        txt.Close();
+                        break;
+                    }
+
+                case 3:
+                    {
+                        TextWriter txt = new StreamWriter("./student3.txt");
+                        string student = student3[0] + "\n" + student3[1] + "\n" + student3[2] + "\n" + student3[3] + "\n" + student3[4] + "\n" + student3[5] + "\n" + student3[6] + "\n" + student3[7];
+                        txt.Write(student);
+                        txt.Close();
+                        break;
+                    }
+
+                case 4:
+                    {
+                        TextWriter txt = new StreamWriter("./student4.txt");
+                        string student = student4[0] + "\n" + student4[1] + "\n" + student4[2] + "\n" + student4[3] + "\n" + student4[4] + "\n" + student4[5] + "\n" + student4[6] + "\n" + student4[7];
+                        txt.Write(student);
+                        txt.Close();
+                        break;
+                    }
+
+                case 5:
+                    {
+                        TextWriter txt = new StreamWriter("./student5.txt");
+                        string student = student5[0] + "\n" + student5[1] + "\n" + student5[2] + "\n" + student5[3] + "\n" + student5[4] + "\n" + student5[5] + "\n" + student5[6];
+                        txt.Write(student);
+                        txt.Close();
+                        break;
+                    }
+            }
+        }
     }
 }
