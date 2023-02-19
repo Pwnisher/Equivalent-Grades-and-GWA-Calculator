@@ -502,6 +502,7 @@ namespace Equivalent_Grades_and_GWA_Calculator
                         break;
                     }
             }
+            MessageBox.Show("Changes Saved", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

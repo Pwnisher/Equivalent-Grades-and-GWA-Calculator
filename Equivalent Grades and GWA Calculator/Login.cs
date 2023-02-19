@@ -15,6 +15,7 @@ namespace Equivalent_Grades_and_GWA_Calculator
     {
         int mov, movX, movY;//, selectedStudent;
         //string loginMode;
+        
         public Login()
         {
             InitializeComponent();
@@ -132,34 +133,38 @@ namespace Equivalent_Grades_and_GWA_Calculator
             Form main = new Main(loginMode, user);
             this.Hide();
             main.ShowDialog();
-            tbUsername.Texts = "";
-            tbPassword.Texts = "";
+            tbUsername.Texts = null;
+            tbPassword.Texts = null;
             this.Show();
             loginForm();
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string[] usernames = { "admin", "arroyo", "montemayor", "astillo", "sensico", "silva"};
+            string[] usernames = { "admin", "arroyo", "montemayor", "astillo", "sensico", "silva" };
             string[] passwords = { "admin123", "arroyo123", "montemayor123", "astillo123", "sensico123", "silva123" };
-
-            for(int i = 0; i < usernames.Length; i++)
+            bool loginFailed = true;
+            for (int i = 0; i < usernames.Length; i++)
             {
                 if (usernames[i] == tbUsername.Texts && passwords[i] == tbPassword.Texts)
                 {
                     if (usernames[i] == "admin")
                     {
                         showMain("Admin", i);
+                        loginFailed = false;
                     }
                     else
                     {
                         showMain("Student", i);
+                        loginFailed = false;
                     }
-                }
-                else
-                {
-                    // show red "incorrect login details. please try again" text chuchu
-                }
+                }                
             }
+
+            if (loginFailed)
+            {
+                MessageBox.Show("Incorrect login details, Please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             /*
             Form main = new Main(loginMode, selectedStudent);
             this.Hide();
@@ -168,7 +173,12 @@ namespace Equivalent_Grades_and_GWA_Calculator
             reset();
             */
         }
-        
+
+        private void roundedButton1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Made by:\nMark Angelo Decena & Christian Baquir", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             /*
