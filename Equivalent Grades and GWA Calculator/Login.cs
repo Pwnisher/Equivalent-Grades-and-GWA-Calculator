@@ -13,12 +13,14 @@ namespace Equivalent_Grades_and_GWA_Calculator
 {
     public partial class Login : Form
     {
-        int mov, movX, movY, selectedStudent;
-        string loginMode;
+        int mov, movX, movY;//, selectedStudent;
+        //string loginMode;
         public Login()
         {
             InitializeComponent();
             this.Location = Screen.AllScreens[0].WorkingArea.Location;
+
+            loginForm();
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -58,9 +60,10 @@ namespace Equivalent_Grades_and_GWA_Calculator
         {
             this.Close();
         }
-
+        
         private void btnStudent_Click(object sender, EventArgs e)
         {
+            /*
             loginMode = "Student";
             cbUsername.Visible = true;
             btnLogin.Visible = true;
@@ -70,10 +73,12 @@ namespace Equivalent_Grades_and_GWA_Calculator
             btnStudent.Visible = false;
             tbPassword.Visible = true;
             tbUsername.Visible = true;
-        }        
-
+            */
+        } 
+        
         private void roundedComboBox1_OnSelectedIndexChanged(object sender, EventArgs e)
         {
+            /*
             string studentName = cbUsername.SelectedItem.ToString();
 
             switch (studentName)
@@ -107,27 +112,75 @@ namespace Equivalent_Grades_and_GWA_Calculator
                         selectedStudent = 5;
                     }
                     break;
-            }           
+            }
+            */
         }
 
+        private void loginForm()
+        {
+            cbUsername.Visible = false;
+            btnLogin.Visible = true;
+            lblLoginAs.Visible = false;
+            lblOr.Visible = false;
+            btnAdmin.Visible = false;
+            btnStudent.Visible = false;
+            tbPassword.Visible = true;
+            tbUsername.Visible = true;
+        }
+        private void showMain(string loginMode, int user)
+        {
+            Form main = new Main(loginMode, user);
+            this.Hide();
+            main.ShowDialog();
+            tbUsername.Texts = "";
+            tbPassword.Texts = "";
+            this.Show();
+            loginForm();
+        }
         private void btnLogin_Click(object sender, EventArgs e)
-        {            
+        {
+            string[] usernames = { "admin", "arroyo", "montemayor", "astillo", "sensico", "silva"};
+            string[] passwords = { "admin123", "arroyo123", "montemayor123", "astillo123", "sensico123", "silva123" };
+
+            for(int i = 0; i < usernames.Length; i++)
+            {
+                if (usernames[i] == tbUsername.Texts && passwords[i] == tbPassword.Texts)
+                {
+                    if (usernames[i] == "admin")
+                    {
+                        showMain("Admin", i);
+                    }
+                    else
+                    {
+                        showMain("Student", i);
+                    }
+                }
+                else
+                {
+                    // show red "incorrect login details. please try again" text chuchu
+                }
+            }
+            /*
             Form main = new Main(loginMode, selectedStudent);
             this.Hide();
             main.ShowDialog();
             this.Show();
             reset();
+            */
         }
+        
         private void btnAdmin_Click(object sender, EventArgs e)
         {
+            /*
             loginMode = "Admin";
             Form main = new Main(loginMode,0);
             this.Hide();
             main.ShowDialog();
             this.Show();
             reset();
+            */
         }
-
+        /*
         private void reset()
         {
             cbUsername.Visible = false;
@@ -140,9 +193,10 @@ namespace Equivalent_Grades_and_GWA_Calculator
             tbPassword.Visible = false;
             tbUsername.Visible = false;
         }
+        */
 
-        //method for checking and generating default values if file doesnt exist
-        void GenerateDefaultValues()
+            //method for checking and generating default values if file doesnt exist
+            void GenerateDefaultValues()
         {
             if (!File.Exists("./student1.txt"))
             {
