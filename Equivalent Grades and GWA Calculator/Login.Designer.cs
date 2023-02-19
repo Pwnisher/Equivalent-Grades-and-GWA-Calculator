@@ -36,11 +36,11 @@
             this.lblLoginAs = new System.Windows.Forms.Label();
             this.tbPassword = new CustomControls.RJControls.RoundedTextbox();
             this.tbUsername = new CustomControls.RJControls.RoundedTextbox();
+            this.cbUsername = new CustomControls.RJControls.RoundedComboBox();
             this.btnStudent = new CustomControls.RoundedButton.RoundedButton();
             this.btnAdmin = new CustomControls.RoundedButton.RoundedButton();
             this.btnLogin = new CustomControls.RoundedButton.RoundedButton();
             this.btnExit = new CustomControls.RoundedButton.RoundedButton();
-            this.cbUsername = new CustomControls.RJControls.RoundedComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -50,8 +50,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(30, 28);
+            this.panel1.Size = new System.Drawing.Size(40, 34);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.titleBar_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.titleBar_MouseMove);
@@ -61,6 +62,7 @@
             // 
             this.pictureBox1.Image = global::Equivalent_Grades_and_GWA_Calculator.Properties.Resources.left_BGv2;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(400, 550);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -72,6 +74,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::Equivalent_Grades_and_GWA_Calculator.Properties.Resources.right_BGv3;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(350, 550);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -90,9 +93,10 @@
             this.panel2.Controls.Add(this.lblLoginAs);
             this.panel2.Controls.Add(this.btnExit);
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(400, 0);
+            this.panel2.Location = new System.Drawing.Point(533, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(351, 550);
+            this.panel2.Size = new System.Drawing.Size(468, 677);
             this.panel2.TabIndex = 5;
             // 
             // lblOr
@@ -100,9 +104,10 @@
             this.lblOr.AutoSize = true;
             this.lblOr.BackColor = System.Drawing.Color.Transparent;
             this.lblOr.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOr.Location = new System.Drawing.Point(162, 379);
+            this.lblOr.Location = new System.Drawing.Point(216, 466);
+            this.lblOr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOr.Name = "lblOr";
-            this.lblOr.Size = new System.Drawing.Size(37, 34);
+            this.lblOr.Size = new System.Drawing.Size(46, 42);
             this.lblOr.TabIndex = 6;
             this.lblOr.Text = "Or";
             // 
@@ -111,9 +116,10 @@
             this.lblLoginAs.AutoSize = true;
             this.lblLoginAs.BackColor = System.Drawing.Color.Transparent;
             this.lblLoginAs.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoginAs.Location = new System.Drawing.Point(131, 298);
+            this.lblLoginAs.Location = new System.Drawing.Point(175, 367);
+            this.lblLoginAs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLoginAs.Name = "lblLoginAs";
-            this.lblLoginAs.Size = new System.Drawing.Size(98, 34);
+            this.lblLoginAs.Size = new System.Drawing.Size(121, 42);
             this.lblLoginAs.TabIndex = 5;
             this.lblLoginAs.Text = "Login As:";
             // 
@@ -126,15 +132,15 @@
             this.tbPassword.BorderSize = 2;
             this.tbPassword.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Italic);
             this.tbPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbPassword.Location = new System.Drawing.Point(50, 373);
-            this.tbPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.tbPassword.Location = new System.Drawing.Point(67, 459);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(5);
             this.tbPassword.Multiline = false;
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Padding = new System.Windows.Forms.Padding(10, 9, 10, 7);
-            this.tbPassword.PasswordChar = false;
+            this.tbPassword.Padding = new System.Windows.Forms.Padding(13, 11, 13, 9);
+            this.tbPassword.PasswordChar = true;
             this.tbPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.tbPassword.PlaceholderText = "Password";
-            this.tbPassword.Size = new System.Drawing.Size(260, 42);
+            this.tbPassword.Size = new System.Drawing.Size(347, 51);
             this.tbPassword.TabIndex = 9;
             this.tbPassword.Texts = "";
             this.tbPassword.UnderlinedStyle = false;
@@ -149,104 +155,19 @@
             this.tbUsername.BorderSize = 2;
             this.tbUsername.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Italic);
             this.tbUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbUsername.Location = new System.Drawing.Point(50, 323);
-            this.tbUsername.Margin = new System.Windows.Forms.Padding(4);
+            this.tbUsername.Location = new System.Drawing.Point(67, 398);
+            this.tbUsername.Margin = new System.Windows.Forms.Padding(5);
             this.tbUsername.Multiline = false;
             this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Padding = new System.Windows.Forms.Padding(10, 9, 10, 7);
+            this.tbUsername.Padding = new System.Windows.Forms.Padding(13, 11, 13, 9);
             this.tbUsername.PasswordChar = false;
             this.tbUsername.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.tbUsername.PlaceholderText = "Username";
-            this.tbUsername.Size = new System.Drawing.Size(260, 42);
+            this.tbUsername.Size = new System.Drawing.Size(347, 51);
             this.tbUsername.TabIndex = 8;
             this.tbUsername.Texts = "";
             this.tbUsername.UnderlinedStyle = false;
             this.tbUsername.Visible = false;
-            // 
-            // btnStudent
-            // 
-            this.btnStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.btnStudent.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.btnStudent.BorderColor = System.Drawing.Color.White;
-            this.btnStudent.BorderRadius = 10;
-            this.btnStudent.BorderSize = 0;
-            this.btnStudent.FlatAppearance.BorderSize = 0;
-            this.btnStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStudent.Font = new System.Drawing.Font("Poppins", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStudent.ForeColor = System.Drawing.Color.White;
-            this.btnStudent.Location = new System.Drawing.Point(50, 336);
-            this.btnStudent.Name = "btnStudent";
-            this.btnStudent.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.btnStudent.Size = new System.Drawing.Size(260, 40);
-            this.btnStudent.TabIndex = 3;
-            this.btnStudent.Text = "Student";
-            this.btnStudent.TextColor = System.Drawing.Color.White;
-            this.btnStudent.UseVisualStyleBackColor = false;
-            this.btnStudent.Click += new System.EventHandler(this.btnStudent_Click);
-            // 
-            // btnAdmin
-            // 
-            this.btnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnAdmin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnAdmin.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnAdmin.BorderRadius = 10;
-            this.btnAdmin.BorderSize = 0;
-            this.btnAdmin.FlatAppearance.BorderSize = 0;
-            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmin.Font = new System.Drawing.Font("Poppins", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdmin.ForeColor = System.Drawing.Color.White;
-            this.btnAdmin.Location = new System.Drawing.Point(50, 416);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.btnAdmin.Size = new System.Drawing.Size(260, 40);
-            this.btnAdmin.TabIndex = 4;
-            this.btnAdmin.Text = "Admin";
-            this.btnAdmin.TextColor = System.Drawing.Color.White;
-            this.btnAdmin.UseVisualStyleBackColor = false;
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.btnLogin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
-            this.btnLogin.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnLogin.BorderRadius = 10;
-            this.btnLogin.BorderSize = 0;
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Poppins", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(50, 425);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.btnLogin.Size = new System.Drawing.Size(260, 40);
-            this.btnLogin.TabIndex = 6;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.TextColor = System.Drawing.Color.White;
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Visible = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(14)))), ((int)(((byte)(9)))));
-            this.btnExit.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(14)))), ((int)(((byte)(9)))));
-            this.btnExit.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnExit.BorderRadius = 15;
-            this.btnExit.BorderSize = 0;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Poppins Black", 13F, System.Drawing.FontStyle.Bold);
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(314, 12);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
-            this.btnExit.Size = new System.Drawing.Size(55, 33);
-            this.btnExit.TabIndex = 4;
-            this.btnExit.Text = "X";
-            this.btnExit.TextColor = System.Drawing.Color.White;
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // cbUsername
             // 
@@ -265,25 +186,116 @@
             "Silva, Neon Genesis"});
             this.cbUsername.ListBackColor = System.Drawing.Color.White;
             this.cbUsername.ListTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.cbUsername.Location = new System.Drawing.Point(50, 498);
-            this.cbUsername.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cbUsername.Location = new System.Drawing.Point(67, 613);
+            this.cbUsername.Margin = new System.Windows.Forms.Padding(4);
+            this.cbUsername.MinimumSize = new System.Drawing.Size(267, 37);
             this.cbUsername.Name = "cbUsername";
-            this.cbUsername.Padding = new System.Windows.Forms.Padding(2);
-            this.cbUsername.Size = new System.Drawing.Size(260, 40);
+            this.cbUsername.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbUsername.Size = new System.Drawing.Size(347, 49);
             this.cbUsername.TabIndex = 7;
             this.cbUsername.Texts = "-SELECT-";
             this.cbUsername.Visible = false;
             this.cbUsername.OnSelectedIndexChanged += new System.EventHandler(this.roundedComboBox1_OnSelectedIndexChanged);
             // 
+            // btnStudent
+            // 
+            this.btnStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
+            this.btnStudent.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
+            this.btnStudent.BorderColor = System.Drawing.Color.White;
+            this.btnStudent.BorderRadius = 10;
+            this.btnStudent.BorderSize = 0;
+            this.btnStudent.FlatAppearance.BorderSize = 0;
+            this.btnStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStudent.Font = new System.Drawing.Font("Poppins", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStudent.ForeColor = System.Drawing.Color.White;
+            this.btnStudent.Location = new System.Drawing.Point(67, 414);
+            this.btnStudent.Margin = new System.Windows.Forms.Padding(4);
+            this.btnStudent.Name = "btnStudent";
+            this.btnStudent.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnStudent.Size = new System.Drawing.Size(347, 49);
+            this.btnStudent.TabIndex = 3;
+            this.btnStudent.Text = "Student";
+            this.btnStudent.TextColor = System.Drawing.Color.White;
+            this.btnStudent.UseVisualStyleBackColor = false;
+            this.btnStudent.Click += new System.EventHandler(this.btnStudent_Click);
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnAdmin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnAdmin.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAdmin.BorderRadius = 10;
+            this.btnAdmin.BorderSize = 0;
+            this.btnAdmin.FlatAppearance.BorderSize = 0;
+            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmin.Font = new System.Drawing.Font("Poppins", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmin.ForeColor = System.Drawing.Color.White;
+            this.btnAdmin.Location = new System.Drawing.Point(67, 512);
+            this.btnAdmin.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnAdmin.Size = new System.Drawing.Size(347, 49);
+            this.btnAdmin.TabIndex = 4;
+            this.btnAdmin.Text = "Admin";
+            this.btnAdmin.TextColor = System.Drawing.Color.White;
+            this.btnAdmin.UseVisualStyleBackColor = false;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
+            this.btnLogin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(144)))), ((int)(((byte)(215)))));
+            this.btnLogin.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnLogin.BorderRadius = 10;
+            this.btnLogin.BorderSize = 0;
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Poppins", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(67, 523);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnLogin.Size = new System.Drawing.Size(347, 49);
+            this.btnLogin.TabIndex = 6;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.TextColor = System.Drawing.Color.White;
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Visible = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(14)))), ((int)(((byte)(9)))));
+            this.btnExit.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(14)))), ((int)(((byte)(9)))));
+            this.btnExit.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnExit.BorderRadius = 15;
+            this.btnExit.BorderSize = 0;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Poppins Black", 13F, System.Drawing.FontStyle.Bold);
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Location = new System.Drawing.Point(419, 15);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.btnExit.Size = new System.Drawing.Size(73, 41);
+            this.btnExit.TabIndex = 4;
+            this.btnExit.Text = "X";
+            this.btnExit.TextColor = System.Drawing.Color.White;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 550);
+            this.ClientSize = new System.Drawing.Size(1000, 677);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
