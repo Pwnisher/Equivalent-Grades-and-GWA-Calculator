@@ -27,6 +27,8 @@ namespace Equivalent_Grades_and_GWA_Calculator
         string[] student1, student2, student3, student4, student5;
         private void Main_Load(object sender, EventArgs e) 
         {
+            this.ActiveControl = null;
+
             //loads data from file
             student1 = File.ReadAllLines("./student1.txt");
             student2 = File.ReadAllLines("./student2.txt");
@@ -37,22 +39,28 @@ namespace Equivalent_Grades_and_GWA_Calculator
             //sets loginMode if Student or Admin       
             if (loginMode == "Student")
             {
-                cb_student.Visible = false;
-                lblSelectSubject.Visible = false;
+                cb_student.Visible = false;                
                 cb_subject.Visible = false;
+                lblSelectStudent.Visible = false;
+                lblSelectSubject.Visible = false;
+                lblChangeGrade.Visible = false;
                 btnChangeGrade.Visible = false;
                 btnSaveChanges.Visible = false;
                 tb_grade.Visible = false;
+                pbBottomBG.Visible = true;
             }
 
             else if (loginMode == "Admin")
             {
-                cb_student.Visible = true;
-                lblSelectSubject.Visible = true;
+                cb_student.Visible = true;                
                 cb_subject.Visible = true;
+                lblSelectStudent.Visible = true;
+                lblSelectSubject.Visible = true;
+                lblChangeGrade.Visible = true;
                 btnChangeGrade.Visible = true;
                 btnSaveChanges.Visible = true;
                 tb_grade.Visible = true;
+                pbBottomBG.Visible = false;
                 lblUsername.Text = loginMode + "!";
             }
 
@@ -348,6 +356,17 @@ namespace Equivalent_Grades_and_GWA_Calculator
             }
 
         }
+
+        private void label41_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_gwa_Click(object sender, EventArgs e)
+        {
+
+        }
+
         public void computeGWA()
         {
             double total = 0, result, n = 0;
@@ -427,8 +446,8 @@ namespace Equivalent_Grades_and_GWA_Calculator
         //string[] student5 = { "88", "88", "88", "70", "98", "95", "91" };
         // ---------------------------- data for demo accounts ---------------------------- //
 
-        //logout button
-        private void button2_Click(object sender, EventArgs e)
+        //logout button        
+        private void btnLogout_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
         }

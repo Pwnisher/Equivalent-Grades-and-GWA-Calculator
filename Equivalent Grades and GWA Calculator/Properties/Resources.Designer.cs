@@ -63,6 +63,16 @@ namespace Equivalent_Grades_and_GWA_Calculator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bottomBG {
+            get {
+                object obj = ResourceManager.GetObject("bottomBG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap left_BGv2 {
             get {
                 object obj = ResourceManager.GetObject("left BGv2", resourceCulture);
@@ -76,6 +86,16 @@ namespace Equivalent_Grades_and_GWA_Calculator.Properties {
         internal static System.Drawing.Bitmap right_BGv3 {
             get {
                 object obj = ResourceManager.GetObject("right BGv3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tableBG {
+            get {
+                object obj = ResourceManager.GetObject("tableBG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
